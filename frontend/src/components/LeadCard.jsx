@@ -28,7 +28,7 @@ const STATUS_LABEL = {
   decent: 'Decent Website',
 };
 
-export default function LeadCard({ lead }) {
+export default function LeadCard({ lead, saved, onToggleSave }) {
   const [outreach, setOutreach] = useState('');
   const [generating, setGenerating] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -80,7 +80,20 @@ export default function LeadCard({ lead }) {
       {/* Header */}
       <div className="p-4 pb-3 border-b border-gray-100">
         <div className="flex items-start justify-between gap-2 mb-1">
-          <h3 className="font-semibold text-navy text-sm leading-tight line-clamp-2">{lead.name}</h3>
+          <div className="flex items-start gap-1">
+            <h3 className="font-semibold text-navy text-sm leading-tight line-clamp-2">{lead.name}</h3>
+            {onToggleSave && (
+              <button
+                onClick={() => onToggleSave(lead)}
+                className="shrink-0 mt-0.5 text-gray-300 hover:text-gold transition-colors"
+                title={saved ? 'Unsave lead' : 'Save lead'}
+              >
+                <svg className={`w-4 h-4 ${saved ? 'fill-gold text-gold' : 'fill-none'}`} viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+              </button>
+            )}
+          </div>
           <span className={`shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-xs font-medium ${config.badge}`}>
             <span className={`w-1.5 h-1.5 rounded-full ${config.dot}`} />
             {config.label}
