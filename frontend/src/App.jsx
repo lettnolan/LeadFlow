@@ -8,6 +8,7 @@ import LeadGrid from './components/LeadGrid.jsx';
 import LeadCard from './components/LeadCard.jsx';
 import UpgradeModal from './components/UpgradeModal.jsx';
 import AuthModal from './components/AuthModal.jsx';
+import LandingPage from './components/LandingPage.jsx';
 
 export default function App() {
   const { user, loading: authLoading, isPro, searchesUsed, limitReached, FREE_LIMIT, signOut, refreshProfile } = useAuth();
@@ -84,6 +85,16 @@ export default function App() {
           <span className="font-semibold">Loading LeadFlow...</span>
         </div>
       </div>
+    );
+  }
+
+  // Show landing page to logged-out visitors
+  if (!user) {
+    return (
+      <>
+        <LandingPage onSignIn={() => setShowAuth(true)} />
+        {showAuth && <AuthModal onClose={() => setShowAuth(false)} />}
+      </>
     );
   }
 
