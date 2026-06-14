@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — LeadFlow</title>
+  <meta name="description" content="LeadFlow is a service of Gateway Digital Co. based in St. Louis, MO. We book qualified appointments for local service businesses using AI-powered outreach." />
+  <link rel="canonical" href="https://leadflowai.tech/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0F172A;
+      --blue: #3B82F6;
+      --blue-light: #EFF6FF;
+      --blue-mid: #BFDBFE;
+      --white: #FFFFFF;
+      --text: #1E293B;
+      --muted: #64748B;
+      --border: #E2E8F0;
+    }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+    /* NAV */
+    nav { background: var(--navy); padding: 0 5%; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { color: var(--white); font-weight: 800; font-size: 1.2rem; text-decoration: none; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--blue); color: var(--white) !important; padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600 !important; }
+    .nav-cta:hover { background: #2563EB !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: white; border-radius: 2px; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--navy); padding: 80px 5%; }
+    .page-hero .container { max-width: 700px; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; }
+    .page-hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: var(--white); line-height: 1.15; letter-spacing: -0.5px; }
+
+    /* CONTENT */
+    .content { padding: 80px 5%; }
+    .content .container { max-width: 700px; }
+    .content p { color: var(--muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
+    .content p:last-child { margin-bottom: 0; }
+
+    /* CONTACT CARD */
+    .contact-section { padding: 0 5% 80px; }
+    .contact-section .container { max-width: 700px; }
+    .contact-card { background: var(--blue-light); border: 1px solid var(--blue-mid); border-radius: 16px; padding: 2rem 2.5rem; }
+    .contact-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 1.25rem; }
+    .contact-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 0.95rem; }
+    .contact-row:last-child { margin-bottom: 0; }
+    .contact-label { font-weight: 600; color: var(--navy); min-width: 70px; }
+    .contact-row a { color: var(--blue); text-decoration: none; }
+    .contact-row a:hover { text-decoration: underline; }
+
+    /* CTA */
+    .about-cta { background: var(--navy); padding: 80px 5%; text-align: center; }
+    .about-cta h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; color: var(--white); margin-bottom: 1rem; letter-spacing: -0.5px; }
+    .about-cta p { color: rgba(255,255,255,0.55); font-size: 1rem; margin-bottom: 2rem; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1rem; padding: 0.9rem 2rem; border-radius: 10px; text-decoration: none; transition: all 0.2s; }
+    .btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 4px 24px rgba(59,130,246,0.4); }
+    .btn-primary:hover { background: #2563EB; transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer { background: #080E1C; padding: 1.5rem 5%; text-align: center; color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.6); }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 5%; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Lead<span>Flow</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="#" class="nav-cta">Book a Call</a>
+    </div>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">About LeadFlow</div>
+    <h1>We're a small team that gets big results.</h1>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="content">
+  <div class="container">
+    <p>LeadFlow is a service of Gateway Digital Co., based in St. Louis, MO.</p>
+    <p>We specialize in one thing: booking qualified appointments for local service businesses using AI-powered outreach.</p>
+    <p>We're not a big agency with layers of account managers. When you work with us, you work directly with Nolan — the person building and running your campaign.</p>
+    <p>That means faster turnaround, direct communication, and someone who actually cares whether your campaign works.</p>
+    <p>The guarantee isn't a marketing gimmick. It's how we operate.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-card">
+      <h3>Get in Touch</h3>
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <a href="mailto:nolan@gatewaydigitalco.com">nolan@gatewaydigitalco.com</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Website</span>
+        <a href="https://leadflowai.tech">leadflowai.tech</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Location</span>
+        <span style="color:var(--muted)">St. Louis, MO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta">
+  <h2>Ready to talk?</h2>
+  <p>Book a free 20-minute strategy call and we'll tell you exactly what to expect.</p>
+  <a href="#" class="btn btn-primary">Book a Free Call →</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 LeadFlow &nbsp;·&nbsp; A <a href="#">Gateway Digital Co.</a> Service &nbsp;·&nbsp;
+  <a href="mailto:nolan@gatewaydigitalco.com">nolan@gatewaydigitalco.com</a>
+</footer>
+
+</body>
+</html>

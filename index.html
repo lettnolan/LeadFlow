@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LeadFlow — We Book the Appointments. You Close the Deals.</title>
+  <meta name="description" content="LeadFlow runs done-for-you AI outreach campaigns for local service businesses. 10 qualified appointments per month, guaranteed." />
+  <meta name="keywords" content="appointment setting, lead generation, local business, HVAC leads, roofing leads, AI outreach" />
+  <meta property="og:title" content="LeadFlow — We Book the Appointments. You Close the Deals." />
+  <meta property="og:description" content="Done-for-you AI outreach campaigns. 10 qualified appointments per month, guaranteed." />
+  <meta property="og:url" content="https://leadflowai.tech" />
+  <link rel="canonical" href="https://leadflowai.tech/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0F172A;
+      --blue: #3B82F6;
+      --blue-light: #EFF6FF;
+      --blue-mid: #BFDBFE;
+      --white: #FFFFFF;
+      --text: #1E293B;
+      --muted: #64748B;
+      --border: #E2E8F0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+
+    /* NAV */
+    nav { background: var(--navy); padding: 0 5%; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 0 rgba(255,255,255,0.08); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { color: var(--white); font-weight: 800; font-size: 1.2rem; text-decoration: none; letter-spacing: -0.5px; }
+    .nav-logo span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--blue); color: var(--white) !important; padding: 0.5rem 1.1rem; border-radius: 8px; font-weight: 600 !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: #2563EB !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: white; border-radius: 2px; }
+
+    /* SECTIONS */
+    section { padding: 80px 5%; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 1rem; letter-spacing: -0.5px; }
+    h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    p { color: var(--muted); line-height: 1.75; }
+
+    /* HERO */
+    .hero { background: var(--navy); padding: 100px 5% 80px; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); color: var(--blue-mid); font-size: 0.8rem; font-weight: 600; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 2rem; letter-spacing: 0.5px; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; color: var(--white); line-height: 1.1; letter-spacing: -1px; margin-bottom: 1.5rem; max-width: 850px; margin-left: auto; margin-right: auto; }
+    .hero h1 span { color: var(--blue); }
+    .hero-sub { font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 2.5rem; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1rem; padding: 0.9rem 2rem; border-radius: 10px; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s; }
+    .btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 4px 24px rgba(59,130,246,0.4); }
+    .btn-primary:hover { background: #2563EB; transform: translateY(-1px); box-shadow: 0 8px 32px rgba(59,130,246,0.5); }
+    .btn-ghost { background: transparent; color: rgba(255,255,255,0.7); font-size: 0.9rem; padding: 0.7rem 1.2rem; }
+    .btn-ghost:hover { color: white; }
+    .hero-btns { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .trust-bar { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; color: rgba(255,255,255,0.4); font-size: 0.85rem; font-weight: 500; }
+    .trust-bar strong { color: rgba(255,255,255,0.6); }
+
+    /* PROBLEM */
+    .problem { background: var(--white); }
+    .problem-inner { max-width: 700px; }
+    .problem h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .problem p { font-size: 1.1rem; margin-top: 1.25rem; }
+
+    /* HOW IT WORKS */
+    .how { background: var(--blue-light); }
+    .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .step { background: var(--white); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); position: relative; }
+    .step-num { width: 44px; height: 44px; background: var(--navy); color: var(--white); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; margin-bottom: 1.25rem; }
+    .step h3 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+    .step p { font-size: 0.95rem; }
+
+    /* WHO IT'S FOR */
+    .who { background: var(--white); }
+    .who-sub { color: var(--muted); font-size: 1.05rem; max-width: 500px; margin-top: 0.75rem; }
+    .who-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 2.5rem; }
+    .who-card { background: var(--blue-light); border: 1px solid var(--blue-mid); border-radius: 12px; padding: 1.25rem 1.5rem; font-weight: 600; color: var(--navy); font-size: 0.95rem; display: flex; align-items: center; gap: 0.75rem; }
+    .who-card::before { content: '✓'; color: var(--blue); font-weight: 800; font-size: 1rem; }
+
+    /* GUARANTEE */
+    .guarantee { background: var(--navy); text-align: center; }
+    .guarantee .section-label { color: var(--blue-mid); }
+    .guarantee h2 { color: var(--white); }
+    .big-num { font-size: clamp(6rem, 15vw, 10rem); font-weight: 900; color: var(--blue); line-height: 1; letter-spacing: -4px; margin: 1rem 0; }
+    .guarantee p { color: rgba(255,255,255,0.6); font-size: 1.1rem; max-width: 580px; margin: 0 auto 2.5rem; }
+    .guarantee-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); color: var(--blue-mid); font-weight: 600; font-size: 0.9rem; padding: 0.6rem 1.4rem; border-radius: 100px; margin-top: 2rem; }
+
+    /* PRICING */
+    .pricing { background: var(--white); }
+    .pricing-wrap { display: flex; justify-content: center; margin-top: 3rem; }
+    .pricing-card { background: var(--navy); border-radius: 20px; padding: 3rem; max-width: 480px; width: 100%; color: var(--white); position: relative; overflow: hidden; }
+    .pricing-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; background: var(--blue); opacity: 0.1; border-radius: 50%; }
+    .pricing-tag { background: var(--blue); color: white; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 100px; display: inline-block; margin-bottom: 1.5rem; }
+    .price { font-size: 3.5rem; font-weight: 900; line-height: 1; letter-spacing: -2px; margin-bottom: 0.3rem; }
+    .price span { font-size: 1.2rem; font-weight: 500; color: rgba(255,255,255,0.5); }
+    .price-sub { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 2rem; }
+    .pricing-features { list-style: none; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+    .pricing-features li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.95rem; color: rgba(255,255,255,0.8); }
+    .pricing-features li::before { content: '✓'; color: var(--blue); font-weight: 800; font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+    .btn-white { background: var(--white); color: var(--navy); width: 100%; justify-content: center; font-size: 1rem; }
+    .btn-white:hover { background: var(--blue-light); }
+    .pricing-note { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 1.25rem; }
+
+    /* FAQ */
+    .faq { background: var(--blue-light); }
+    .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .faq-item { background: var(--white); border-radius: 14px; padding: 1.75rem; border: 1px solid var(--border); }
+    .faq-q { font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; font-size: 0.95rem; }
+    .faq-a { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+    /* CTA FOOTER */
+    .cta-footer { background: var(--navy); text-align: center; }
+    .cta-footer h2 { color: var(--white); margin-bottom: 1rem; }
+    .cta-footer p { color: rgba(255,255,255,0.55); font-size: 1.05rem; max-width: 500px; margin: 0 auto 2.5rem; }
+    .cta-footer .contact-line { color: rgba(255,255,255,0.35); font-size: 0.85rem; margin-top: 1.5rem; }
+    .cta-footer .contact-line a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .cta-footer .contact-line a:hover { color: white; }
+
+    /* FOOTER */
+    footer { background: #080E1C; padding: 1.5rem 5%; text-align: center; color: rgba(255,255,255,0.25); font-size: 0.8rem; }
+    footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.6); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      section { padding: 60px 5%; }
+      .hero { padding: 70px 5% 60px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 5%; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); }
+      .big-num { font-size: 7rem; }
+      .pricing-card { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Lead<span>Flow</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="#" class="nav-cta">Book a Call</a>
+    </div>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">✦ Done-For-You AI Outreach</div>
+    <h1>We Book <span>10 Qualified Appointments</span> Per Month For Your Business — Guaranteed.</h1>
+    <p class="hero-sub">LeadFlow runs done-for-you AI outreach campaigns for local service businesses. You get booked calls. We handle everything else.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn btn-primary">Book a Free Strategy Call →</a>
+      <a href="#how" class="btn btn-ghost">See How It Works ↓</a>
+    </div>
+    <div class="trust-bar">
+      <strong>Serving:</strong> HVAC &nbsp;·&nbsp; Roofing &nbsp;·&nbsp; Landscaping &nbsp;·&nbsp; Auto Detailing &nbsp;·&nbsp; Chiropractic &nbsp;·&nbsp; Med Spa
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-inner">
+      <div class="section-label">The Problem</div>
+      <h2>Referrals Are Great. Until They're Not.</h2>
+      <p>Most local service businesses get new clients from word of mouth. It works — until it doesn't. One slow month, one lost referral partner, and suddenly the pipeline is dry. We fix that. We build you a consistent, predictable flow of new client appointments — so you're never waiting on someone else to send you business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-label">The Process</div>
+    <h2>Three Steps. Zero Effort on Your End.</h2>
+    <div class="how-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>We Build Your Target List</h3>
+        <p>We research and build a list of your ideal customers in your service area — people who actually need what you offer.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>We Run the Outreach</h3>
+        <p>We write and send personalized emails to your prospects. We manage the follow-up. We handle the replies. You never touch it.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>You Show Up to Calls</h3>
+        <p>Interested prospects get booked directly onto your calendar. You just show up and close.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="who">
+  <div class="container">
+    <div class="section-label">Who It's For</div>
+    <h2>Built For Local Service Businesses</h2>
+    <p class="who-sub">If you do great work but struggle to find consistent new clients, this is for you.</p>
+    <div class="who-grid">
+      <div class="who-card">HVAC &amp; Plumbing</div>
+      <div class="who-card">Roofing &amp; Contractors</div>
+      <div class="who-card">Landscaping &amp; Lawn Care</div>
+      <div class="who-card">Auto Detailing</div>
+      <div class="who-card">Chiropractic &amp; Wellness</div>
+      <div class="who-card">Med Spa &amp; Aesthetics</div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="container">
+    <div class="section-label">Our Guarantee</div>
+    <h2>10 Appointments. Guaranteed.</h2>
+    <div class="big-num">10</div>
+    <p>We guarantee 10 qualified appointments in your first month. If we don't deliver, we keep running your campaign at no charge until we do. You don't pay for results we don't produce.</p>
+    <a href="#" class="btn btn-primary">Hold Us To It →</a>
+    <div>
+      <span class="guarantee-badge">✓ No results? We keep working — no extra charge.</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Pricing</div>
+    <h2 style="text-align:center">Simple, Flat-Rate Pricing</h2>
+    <p style="text-align:center;max-width:480px;margin:0.75rem auto 0">No setup fees. No long-term contracts. Cancel anytime.</p>
+    <div class="pricing-wrap">
+      <div class="pricing-card">
+        <span class="pricing-tag">Most Popular</span>
+        <div class="price">$1,000<span>/mo</span></div>
+        <div class="price-sub">Everything included. No surprises.</div>
+        <ul class="pricing-features">
+          <li>Custom prospect list built for your business</li>
+          <li>Full outreach campaign written and managed</li>
+          <li>4-touch follow-up sequence</li>
+          <li>Weekly performance reports</li>
+          <li>10 qualified appointments guaranteed</li>
+        </ul>
+        <a href="#" class="btn btn-white">Get Started →</a>
+      </div>
+    </div>
+    <p class="pricing-note">Not ready yet? <a href="#" style="color:var(--blue)">Book a free 20-minute call first.</a></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2>Common Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">What counts as a "qualified appointment"?</div>
+        <div class="faq-a">A qualified appointment is a booked call with someone in your service area who expressed genuine interest in your service. No tire kickers, no wrong numbers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What industries do you work with?</div>
+        <div class="faq-a">We currently work with HVAC, roofing, landscaping, auto detailing, chiropractic, and med spa businesses. If you're not on that list, reach out — we may still be a fit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How long before I see results?</div>
+        <div class="faq-a">Most clients see their first appointments within the first 2 weeks of campaign launch. Full ramp-up to 10/month typically happens by week 3–4.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need to do anything?</div>
+        <div class="faq-a">You need to answer your calendar invites and show up to calls. That's it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if you don't hit 10 appointments?</div>
+        <div class="faq-a">We keep running your campaign at no additional charge until we do. The guarantee is real.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a contract?</div>
+        <div class="faq-a">No long-term contract. We work month to month. If you're not happy, you can cancel anytime.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<section class="cta-footer">
+  <div class="container">
+    <div class="section-label" style="color:var(--blue-mid)">Get Started</div>
+    <h2>Ready to Fill Your Calendar?</h2>
+    <p>Book a free 20-minute strategy call. We'll look at your business, your market, and tell you exactly what results you can expect.</p>
+    <a href="#" class="btn btn-primary">Book Your Free Call →</a>
+    <div class="contact-line">
+      <a href="mailto:nolan@gatewaydigitalco.com">nolan@gatewaydigitalco.com</a> &nbsp;·&nbsp;
+      <a href="https://leadflowai.tech">leadflowai.tech</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 LeadFlow &nbsp;·&nbsp; A <a href="#">Gateway Digital Co.</a> Service &nbsp;·&nbsp;
+  <a href="mailto:nolan@gatewaydigitalco.com">nolan@gatewaydigitalco.com</a>
+</footer>
+
+</body>
+</html>
